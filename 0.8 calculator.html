@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <p class="para"></p>
+    </div>
+    <div class="first-line">
+        <button onclick=
+        "updateCalculas('1');">
+            1
+        </button>
+
+        <button onclick=
+        "updateCalculas('2');">
+            2
+        </button>
+
+        <button onclick=
+        "updateCalculas('3');">
+            3
+        </button>
+
+        <button onclick=
+        "updateCalculas('+');">
+            +
+        </button>
+
+    </div>
+    <div class="secon-line">
+        <button onclick=
+        "updateCalculas('4');">
+            4
+        </button>
+
+        <button onclick=
+        "updateCalculas('5');">
+            5
+        </button>
+
+        <button onclick=
+        "updateCalculas('6');">
+            6
+        </button>
+
+        <button onclick=
+        "updateCalculas('-');">
+            -
+        </button>
+
+    </div>
+    <div class="third-line">
+        <button onclick=
+        "updateCalculas('7');">
+            7
+        </button>
+
+        <button onclick=
+        "updateCalculas('8');">
+            8
+        </button>
+
+        <button onclick=
+        "updateCalculas('9');">
+            9
+        </button>
+
+        <button onclick=
+        "updateCalculas('*');">
+            *
+        </button>
+
+    </div>
+    <div class="fourth-line">
+        <button onclick=
+        "updateCalculas('0');">
+            0
+        </button>
+
+        <button onclick=
+        "updateCalculas('.');">
+            .
+        </button>
+
+        <button onclick=
+        "calCulation= eval(calCulation);
+        document.querySelector('.para').innerHTML=calCulation;">
+            =
+        </button>
+
+        <button onclick=
+        "updateCalculas('/');">
+            /
+        </button>
+
+
+    </div>
+
+    <div>
+        <button onclick="
+        localStorage.removeItem('calCulation');
+         document.querySelector('.para').innerHTML='----';
+         return calCulation=('');" class="clear">Clear</button>
+    </div>
+
+
+    <script>
+        
+        let calCulation=JSON.parse
+        (localStorage.getItem('calCulation')) ||
+        ('');
+
+
+        function updateCalculas(num) {
+            calCulation+=num;console.log(calCulation);
+            document.querySelector('.para').innerHTML=calCulation;
+
+            localStorage.setItem('calCulation',JSON.stringify( calCulation));
+
+        }
+    </script>
+</body>
+</html>
